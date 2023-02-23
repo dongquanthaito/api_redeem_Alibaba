@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { loginBOf8bet } = require('../controllers/loginBO.controller')
+const { loginBOf8bet, loginBOhi88 } = require('../controllers/loginBO.controller')
 mongoose.set('strictQuery', true)
 const connectDb = async() => {
     try {
@@ -8,8 +8,10 @@ const connectDb = async() => {
         await mongoose.connect('mongodb+srv://irisattapp:Rythermbk98@ali.mrgmvh4.mongodb.net/database')
         console.log("Connect database Redeem Code_F8 -  Successfully")
         loginBOf8bet()
+        loginBOhi88()
         setInterval(() => {
             loginBOf8bet()
+            loginBOhi88()
         }, 1800000);
     } catch (error) {
         console.log({
