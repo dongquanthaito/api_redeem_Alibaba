@@ -7,12 +7,12 @@ const connectDb = async() => {
         //mongodb+srv://irisattapp:Rythermbk98@ali.mrgmvh4.mongodb.net/database
         await mongoose.connect('mongodb+srv://irisattapp:Rythermbk98@ali.mrgmvh4.mongodb.net/database')
         console.log("Connect database Redeem Code_Alibaba -  Successfully")
-        loginBOf8bet()
-        loginBOhi88()
-        setInterval(() => {
-            loginBOf8bet()
-            loginBOhi88()
-        }, 1800000);
+        // loginBOf8bet()
+        // loginBOhi88()
+        // setInterval(() => {
+        //     loginBOf8bet()
+        //     loginBOhi88()
+        // }, 1800000);
     } catch (error) {
         console.log({
             status: 502,

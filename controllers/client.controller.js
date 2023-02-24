@@ -39,7 +39,7 @@ module.exports = {
                     })
                 } else {
                     let find = await promoCodeModel.find(query) //Tìm code
-                    
+                    console.log(find)
                     if(find.length == 0) {  //Không có code
                         
                         res.json({
@@ -59,8 +59,6 @@ module.exports = {
                                 text_mess: 'Mất kết nối đến máy chủ. Xin vui lòng thử lại.'
                             })
                         } else {
-                        
-    
                             let timeStamp = new Date(timeGlobal.dateTime).getTime()
                             let expTime = find[0].exp_code
         
@@ -68,7 +66,6 @@ module.exports = {
                             let month = ("0" + (new Date(expTime).getMonth() +1)).slice('-2')
                             let year = new Date(expTime).getFullYear()
                             let time = date + ' tháng ' + month + ', ' + year
-        
                             if((expTime - timeStamp) <= 0) {    //Kiểm tra hạn sử dụng CODE - Code hết hạn
                                 res.json({  
                                     status_code: 403,
