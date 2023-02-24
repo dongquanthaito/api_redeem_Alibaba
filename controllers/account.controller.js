@@ -43,7 +43,7 @@ module.exports = {
                     site: account.site,
                     username: account.username,
                     role: account.role,
-                    site: account.site,
+                    system: account.system,
                     token: token
                 })
             } else {
