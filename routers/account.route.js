@@ -9,7 +9,7 @@ Router.route('/').get(auth, role([roleType.SUPERADMIN, roleType.ADMIN]), getAcc)
 Router.route('/').patch(auth, role([roleType.SUPERADMIN, roleType.ADMIN]), updateAcc)
 Router.route('/').delete(auth, role([roleType.SUPERADMIN, roleType.ADMIN]), deleteAcc)
 
-Router.route('/register').post(auth, role([roleType.SUPERADMIN, roleType.ADMIN]), createAcc)
+Router.route('/register').post(createAcc)
 
 Router.route('/login').post(login)
 
