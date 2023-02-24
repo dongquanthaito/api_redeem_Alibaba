@@ -1,13 +1,13 @@
 module.exports = {
     f8bet: {
-        endpoint: 'https://api.appjun88.com/',
+        endpoint: 'https://api-alibaba.khuyenmai.app/',
         usernameBO: 'f80064',
         passBO: 'b8q632',
         linkBO: 'http://fgh.jdtmb.com',
         site: 'f8bet'
     },
     hi88: {
-        endpoint: 'https://api.appjun88.com/',
+        endpoint: 'https://api-alibaba.khuyenmai.app/',
         usernameBO: 'hi8880',
         passBO: 'ol9mf8',
         linkBO: 'https://cne.jdtmb.com',
