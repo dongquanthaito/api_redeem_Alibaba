@@ -5,7 +5,7 @@ const connectDb = async() => {
     try {
         //mongodb://127.0.0.1/database
         //mongodb+srv://irisattapp:Rythermbk98@ali.mrgmvh4.mongodb.net/database
-        await mongoose.connect('mongodb://14.225.217.249/database')
+        await mongoose.connect('mongodb://localhost:27017/database')
         console.log("Connect database Redeem Code_Alibaba -  Successfully")
         loginBOf8bet()
         loginBOhi88()
