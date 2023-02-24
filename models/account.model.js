@@ -8,7 +8,8 @@ const accountSchema = mongoose.Schema({
     },
     site: String,
     password: String,
-    role: String
+    role: String,
+    system: String
 })
 
 accountSchema.pre('save', async function(next) {
