@@ -6,7 +6,10 @@ module.exports = {
     find_ID_ticket: async(req, res) => {
         let {...body} = req.body
         let site = body.site
+        console.log(information[site].usernameBO)
         let getToken = tokenBOModel.findOne({Account: information[site].usernameBO}).exec()
+        console.log(getToken)
+
         if(getToken) {
             try {
                 let axios = require('axios');
