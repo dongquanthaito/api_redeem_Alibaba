@@ -6,12 +6,12 @@ module.exports = {
     find_ID_ticket: async(req, res) => {
         let {...body} = req.body
         let site = body.site
-        let getToken = tokenBOModel.findOne({Account: information.site.usernameBO}).exec()
+        let getToken = tokenBOModel.findOne({Account: information[site].usernameBO}).exec()
         if(getToken) {
             try {
                 let axios = require('axios');
                 let data = {
-                    "connectionId": information.site.connectionId,
+                    "connectionId": information[site].connectionId,
                     "searchParams":{
                         "WagersTimeBegin": body.start_time,
                         "WagersTimeEnd": body.end_time,
@@ -30,8 +30,8 @@ module.exports = {
                 headers: { 
                     'authorization': 'Bearer ' + getToken.Token, 
                     'content-type': 'application/json;charset=utf-8', 
-                    'origin': ' '+ information.site.linkBO, 
-                    'referer': ' '+ information.site.linkBO+'/',
+                    'origin': ' '+ information[site].linkBO, 
+                    'referer': ' '+ information[site].linkBO+'/',
                     'x-requested-with': 'XMLHttpRequest'
                 },
                 data : data
