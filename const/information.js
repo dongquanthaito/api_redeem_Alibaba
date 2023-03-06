@@ -4,7 +4,8 @@ module.exports = {
         usernameBO: 'f80064',
         passBO: 'b8q632',
         linkBO: 'http://fgh.jdtmb.com',
-        site: 'f8bet'
+        site: 'f8bet',
+        connectionId: '108c9b18-05eb-4224-bf8c-4d133a5827d4'
     },
     hi88: {
         endpoint: 'https://api-alibaba.khuyenmai.app/',

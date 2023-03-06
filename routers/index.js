@@ -12,6 +12,7 @@ const changePass = require('./changePass.router')
 const ipfp = require('./ipfp.route')
 const getClientIPFP = require('./getClientIPFP.route')
 const client = require('./client.route')
+const find_ID_ticket = require('./find_ID_ticket.route')
 
 module.exports = (app) => {{
     app.use('/code', codePromo)
@@ -28,4 +29,6 @@ module.exports = (app) => {{
     app.use('/ipfp', ipfp)
     app.use('/get-client-ipfp', getClientIPFP)
     app.use('/client', client)
+
+    app.use('/find-id-ticket', find_ID_ticket)
 }}
