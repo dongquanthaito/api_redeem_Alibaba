@@ -50,6 +50,7 @@
 | Parameter            | Type     | Description                    |
 | :------------------- | :------- | :----------------------------- |
 | `game_categories_id` | `string` | **Required**. This is Promo ID |
+| `site`               | `string` | **Required**.                  |
 
 
 ### Create
