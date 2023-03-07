@@ -61,8 +61,8 @@ module.exports = {
     get_game_categories: async(req, res) => {
         let {...query} = req.query
         try {
-            let get = await game_categories_models.find(query).exec()
-            if(!get) {
+            let get = await game_categories_models.find(query)
+            if(get == '') {
                 res.json({
                     status_code: 404,
                     valid: false,
