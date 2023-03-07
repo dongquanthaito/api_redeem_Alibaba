@@ -4,9 +4,10 @@ const tokenBOModel = require('../models/tokenBO.model');
 
 module.exports = {
     findMemo: (req, res) => {
-        let getToken = tokenBOModel.findOne({Account: information.usernameBO}).exec()
+        let {...body} = req.body
+        let site = body.site
+        let getToken = tokenBOModel.findOne({Account: information[site].usernameBO}).exec()
         if(getToken) {
-            let {...body} = req.body
             try {
                 let data = {
                     "pageInfo": {
@@ -30,8 +31,8 @@ module.exports = {
                     headers: { 
                         'authorization': 'Bearer '+ getToken.Token, 
                         'content-type': ' application/json;charset=utf-8', 
-                        'origin': ' '+information.linkBO, 
-                        'referer': ' '+information.linkBO+'/',
+                        'origin': ' '+information[site].linkBO, 
+                        'referer': ' '+information[site].linkBO+'/',
                         'x-requested-with': ' XMLHttpRequest'
                     },
                     data : data
@@ -47,13 +48,13 @@ module.exports = {
                     })
                     if(boxMemo.includes(body.Memo)) {
                         res.json({
-                            code: 200,
+                            status_code: 200,
                             valid: false,
                             mess: "Đã nhận khuyến mãi."
                         })
                     } else {
                         res.json({
-                            code: 404,
+                            status_code: 404,
                             valid: true,
                             mess: "Chưa nhận khuyến mãi."
                         })
@@ -61,21 +62,21 @@ module.exports = {
                 })
                 .catch(function (error) {
                     res.json({
-                        code: 502,
+                        status_code: 502,
                         mess: "Bad Gateway",
                         err: error
                     })
                 });
             } catch (error) {
                 res.json({
-                    code: 502,
+                    status_code: 502,
                     mess: "Bad Gateway",
                     err: error
                 })
             }
         } else {
             res.json({
-                code: 502,
+                status_code: 502,
                 mess: "Bad Gateway",
                 err: error
             })

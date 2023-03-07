@@ -50,7 +50,7 @@
 | Parameter            | Type     | Description                    |
 | :------------------- | :------- | :----------------------------- |
 | `game_categories_id` | `string` | **Required**. This is Promo ID |
-| `site`               | `string` | **Required**.                  |
+
 
 
 ### Create
@@ -91,6 +91,33 @@
 {
     "game_categories_id": "nohu",
     "game_categories": ["Pg2Slot", "BngSlot", "Cq9Slot"]
+}
+```
+### Find Memo BO
+```http
+  POST /find-memo
+```
+- Body:
+```javascript
+{
+  "Account": "xuxian",
+  "TimeBegin": "2023/01/01 00:00:00",
+  "Memo": "SH8888"
+}
+```
+ - Result:
+ ```javascript
+{
+    "status_code": 200,
+    "valid": false,
+    "mess": "Đã nhận khuyến mãi.",
+}
+```
+ ```javascript
+{
+    "status_code": 400,
+    "valid": true,
+    "mess": "Chưa nhận khuyến mãi.",
 }
 ```
 
