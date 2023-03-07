@@ -62,11 +62,20 @@ module.exports = {
         let {...query} = req.query
         try {
             let get = await game_categories_models.find(query)
-            res.json({
-                status_code: 200,
-                valid: true,
-                result: get
-            })
+            if(get) {
+                res.json({
+                    status_code: 200,
+                    valid: true,
+                    result: get
+                })
+            } else {
+                res.json({
+                    status_code: 404,
+                    valid: false,
+                    message: "Not found",
+                })
+            }
+
         } catch (error) {
             res.json({
                 status_code: 400,
