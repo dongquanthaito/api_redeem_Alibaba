@@ -1,7 +1,8 @@
 
 ## API Reference
 
-#### Find Ticked ID
+## Ticket ID
+### Find Ticked ID
 ```http
   POST /find-id-ticket
 ```
@@ -38,6 +39,57 @@
             }
         ]
     }
+}
+```
+## Game Categories
+### Get All
+```http
+  GET /game-categories
+```
+
+| Parameter            | Type     | Description                    |
+| :------------------- | :------- | :----------------------------- |
+| `game_categories_id` | `string` | **Required**. This is Promo ID |
+
+
+### Create
+```http
+  POST /game-categories/create
+```
+- Body:
+```javascript
+{
+    "game_categories_id": "nohu",
+    "game_categories": ["Pg2Slot", "BngSlot", "Cq9Slot"]
+}
+```
+ - Result - Success:
+ ```javascript
+{
+    "status_code": 200,
+    "valid": true,
+    "mess": "Create Successfully",
+    "result": {
+        "game_categories_id": "nohu",
+        "game_categories": [
+            "Pg2Slot",
+            "BngSlot",
+            "Cq9Slot"
+        ],
+        "_id": "640600905798846d0f6475ca",
+        "__v": 0
+    }
+}
+```
+### Update
+```http
+  POST /game-categories/update
+```
+- Body:
+```javascript
+{
+    "game_categories_id": "nohu",
+    "game_categories": ["Pg2Slot", "BngSlot", "Cq9Slot"]
 }
 ```
 

@@ -57,5 +57,23 @@ module.exports = {
                 error: error
             })
         }
+    },
+    get_game_categories: async(req, res) => {
+        let {...query} = req.query
+        try {
+            let get = await game_categories_models.find(query)
+            res.json({
+                status_code: 200,
+                valid: true,
+                result: get
+            })
+        } catch (error) {
+            res.json({
+                status_code: 400,
+                valid: false,
+                message: "Bad Request",
+                error: error
+            })
+        }
     }
 }
