@@ -18,5 +18,3 @@ module.exports = {
         site: 'att'
     }
 }
-
-// https://api.f8bet.club/'f80064',
