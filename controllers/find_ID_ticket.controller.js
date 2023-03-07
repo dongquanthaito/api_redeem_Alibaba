@@ -9,7 +9,6 @@ module.exports = {
         let getToken = await tokenBOModel.findOne({Account: information[site].usernameBO}).exec()
         if(getToken) {
             try {
-                let axios = require('axios');
                 let data = {
                     "connectionId": information[site].connectionId,
                     "searchParams":{
