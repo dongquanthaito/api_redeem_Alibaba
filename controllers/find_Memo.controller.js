@@ -7,7 +7,6 @@ module.exports = {
         let {...body} = req.body
         let site = body.site
         let getToken = await tokenBOModel.findOne({Account: information[site].usernameBO}).exec()
-        console.log(getToken)
         if(getToken) {
             try {
                 let data = {

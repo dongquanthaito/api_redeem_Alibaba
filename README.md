@@ -100,9 +100,10 @@
 - Body:
 ```javascript
 {
-  "Account": "xuxian",
-  "TimeBegin": "2023/01/01 00:00:00",
-  "Memo": "SH8888"
+    "Account": "xuxian",
+    "TimeBegin": "2023/01/01 00:00:00",
+    "Memo": "SH8888",
+    "site": "f8bet"
 }
 ```
  - Result:
