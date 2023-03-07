@@ -18,6 +18,7 @@ module.exports = {
                     "Account": body.Account,
                     "agSearchType": 0,
                     "TimeBegin": body.TimeBegin,
+                    "TimeEnd": body.TimeEnd,
                     "Types": [
                         "Bonus"
                     ]

@@ -50,6 +50,8 @@
 | Parameter            | Type     | Description                    |
 | :------------------- | :------- | :----------------------------- |
 | `game_categories_id` | `string` | **Required**. This is Promo ID |
+| `site`               | `string` |  **Required**                  |
+
 
 
 
@@ -102,6 +104,7 @@
 {
     "Account": "xuxian",
     "TimeBegin": "2023/01/01 00:00:00",
+    "TimeEnd": "2023/01/01 23:59:59",
     "Memo": "SH8888",
     "site": "f8bet"
 }
