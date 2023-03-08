@@ -135,7 +135,6 @@
     "AccountsString": "xuxian",
     "Amount": "1",
     "Audit": "1",
-    "DepositToken": "2807aa9dee394907b8a9857cb7d7e057",
     "Memo": "test2",
     "PortalMemo": "test1",
     "TimeStamp": 1675491502650,
