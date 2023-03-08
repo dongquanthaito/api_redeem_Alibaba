@@ -52,7 +52,7 @@ module.exports = {
                 });
             } else {
                 res.json({
-                    status_code: 502,
+                    status_code: 500,
                     valid: false,
                     mess: "Bad Gateway",
                 })

@@ -192,10 +192,11 @@ true
 **Body:**
 ```javascript
 {
-    "account": "iris",
-    "start_time": "2023/01/01 00:00:00",
-    "end_time": "2023/01/01 23:59:59",
-    "game_categories": ["Pg2Slot"]
+    "account": "hungnguyen030",
+    "start_time": "2023/03/01 00:00:00",
+    "end_time": "2023/03/01 23:59:59",
+    "game_categories": ["Pg2Slot"],
+    "site": "f8bet"
 }
 ```
 **Result - Success:**
