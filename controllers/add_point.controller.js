@@ -83,8 +83,6 @@ let get_deposit_token = async(site) => {
             
             return axios(option)
             .then(function (response) {
-                console.log(response.data)
-                console.log(getToken.Token)
                 return({
                     status_code: 200,
                     valid: true,

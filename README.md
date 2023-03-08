@@ -6,7 +6,7 @@
 ```http
   POST /find-id-ticket
 ```
-*Body:*
+**Body:**
 ```javascript
 {
     "start_time": "2023/03/05 00:00:00",
@@ -16,7 +16,7 @@
     "site": "f8bet"
 }
 ```
-*Result - Success:*
+**Result - Success:**
  ```javascript
 {
     "Code": 200,
@@ -59,14 +59,14 @@
 ```http
   POST /game-categories/create
 ```
-*Body:*
+**Body:**
 ```javascript
 {
     "game_categories_id": "nohu",
     "game_categories": ["Pg2Slot", "BngSlot", "Cq9Slot"]
 }
 ```
-*Result - Success:*
+**Result - Success:**
  ```javascript
 {
     "status_code": 200,
@@ -88,7 +88,7 @@
 ```http
   POST /game-categories/update
 ```
-*Body:*
+**Body:**
 ```javascript
 {
     "game_categories_id": "nohu",
@@ -99,7 +99,7 @@
 ```http
   POST /find-memo
 ```
-*Body:*
+**Body:**
 ```javascript
 {
     "Account": "xuxian",
@@ -109,7 +109,7 @@
     "site": "f8bet"
 }
 ```
- *Result:*
+**Result:**
  ```javascript
 {
     "status_code": 200,
@@ -129,10 +129,10 @@
 ```http
   POST /add-point-bo
 ```
-*Body:*
+**Body:**
 ```javascript
 {
-    "AccountsString": "xuxian",
+    "AccountsString": "iris",
     "Amount": "1",
     "Audit": "1",
     "Memo": "test2",
@@ -141,7 +141,14 @@
     "site": "f8bet"
 }
 ```
-*Result - Success:*
+*Ghi chú:*
+- `Amount` : Điểm thưởng
+- `Audit` : Điểm thưởng * vòng cược
+- `Memo` : Ghi chú
+- `PortalMemo` : Ghi chú trang đầu
+- `TimeStamp` : Thời gian cộng điểm (hiện tại)
+
+**Result - Success:**
  ```javascript
 {
     "Code": 200,
@@ -150,7 +157,7 @@
     "Result": {
         "List": [
             {
-                "Account": "hungnguyen030",
+                "Account": "iris",
                 "BetAmount": 4,
                 "Commissionable": 4,
                 "GameCategory": "PG2 Điện tử",
@@ -165,5 +172,17 @@
         ]
     }
 }
+```
+**Result - Not Found Account:**
+ ```javascript
+{
+    "ReturnObject": null,
+    "IsSuccess": false,
+    "ErrorMessage": "會員【iris】不存在"
+}
+```
+**Result - Success:**
+ ```javascript
+true
 ```
 
