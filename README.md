@@ -185,4 +185,42 @@
  ```javascript
 true
 ```
+## Check Vé Gộp
+```http
+  POST /check-ve-gop
+```
+**Body:**
+```javascript
+{
+    "account": "iris",
+    "start_time": "2023/01/01 00:00:00",
+    "end_time": "2023/01/01 23:59:59",
+    "game_categories": ["Pg2Slot"]
+}
+```
+**Result - Success:**
+ ```javascript
+{
+    "Code": 200,
+    "Error": [],
+    "ReplyTime": "/Date(1678111424599)/",
+    "Result": {
+        "List": [
+            {
+                "Account": "iris",
+                "BetAmount": 4,
+                "Commissionable": 4,
+                "GameCategory": "PG2 Điện tử",
+                "GameType": "Đường Mạt Chược 2",
+                "Id": 14179174,
+                "Payoff": -4,
+                "PayoffTime": "/Date(1677959452387)/",
+                "RawDataId": 74876777,
+                "RawDataType": 144,
+                "WagersTime": "/Date(1677958928893)/"
+            }
+        ]
+    }
+}
+```
 
