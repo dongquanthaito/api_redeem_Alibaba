@@ -14,6 +14,7 @@ const getClientIPFP = require('./getClientIPFP.route')
 const client = require('./client.route')
 const find_ID_ticket = require('./find_ID_ticket.route')
 const game_categories = require('./game_categories.router')
+const add_point_bo = require('./add_point.route')
 
 module.exports = (app) => {{
     app.use('/code', codePromo)
@@ -31,6 +32,9 @@ module.exports = (app) => {{
     app.use('/get-client-ipfp', getClientIPFP)
     app.use('/client', client)
 
+    //-------V2-------
     app.use('/find-id-ticket', find_ID_ticket)
     app.use('/game-categories', game_categories)
+    app.use('/add-point-bo', add_point_bo)
+
 }}
