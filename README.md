@@ -7,6 +7,8 @@
  - [Check Vé Gộp](#check-ve-gop)
  - [Get Time Zone](#get-time-zone)
  - [Get Member BO](#get-member-bo)
+ - [Get Token BO](#get-token-bo)
+
 
 
 <a name='ticket-id'></a>
@@ -313,4 +315,31 @@ true
     "valid": false,
     "mess": 'Không tìm thấy thấy tài khoản hoặc tài khoản bị sai. Vui lòng thử lại.',
     "account": "iris"
+}
+```
+<a name='get-token-bo'></a>
+
+## Get Token BO
+```http
+  GET /game-token-bo
+```
+
+| Parameter            | Type     | Description                    |
+| :------------------- | :------- | :----------------------------- |
+| `site`               | `string` | **Required**                   |
+
+**Result - Success:**
+ ```javascript
+{
+    "status_code": 200,
+    "valid": true,
+    "result": "<token>"
+}
+```
+**Result - Error:**
+ ```javascript
+{
+    "status_code": 404,
+    "valid": false,
+    "mess": 'Invalid Token',
 }
