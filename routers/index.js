@@ -16,6 +16,7 @@ const find_ID_ticket = require('./find_ID_ticket.route')
 const game_categories = require('./game_categories.router')
 const add_point_bo = require('./add_point.route')
 const check_ve_gop = require('./check_ve_gop.route')
+const get_timeZone = require('./get_timeZone.route')
 
 module.exports = (app) => {{
     app.use('/code', codePromo)
@@ -38,5 +39,6 @@ module.exports = (app) => {{
     app.use('/game-categories', game_categories)
     app.use('/add-point-bo', add_point_bo)
     app.use('/check-ve-gop', check_ve_gop)
+    app.use('/get-timeZone', get_timeZone)
 
 }}

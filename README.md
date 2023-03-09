@@ -224,4 +224,47 @@ true
     }
 }
 ```
+## Get Time Zone
+```http
+  GET /get-timeZone
+```
 
+
+| Parameter            | Type     | Description                              |
+| :------------------- | :------- | :--------------------------------------- |
+| `timeZone`           | `string` | **Required**. Full IANA time zone names. |
+
+*Ví dụ:*
+- `timeZone` : America/Santiago
+
+
+**Result - Success:**
+ ```javascript
+{
+    "status_code": 200,
+    "valid": true,
+    "result": {
+        "year": 2023,
+        "month": 3,
+        "day": 9,
+        "hour": 0,
+        "minute": 57,
+        "seconds": 38,
+        "milliSeconds": 155,
+        "dateTime": "2023-03-09T00:57:38.1555535",
+        "date": "03/09/2023",
+        "time": "00:57",
+        "timeZone": "America/Santiago",
+        "dayOfWeek": "Thursday",
+        "dstActive": true
+    }
+}
+```
+
+**Result - Error:**
+ ```javascript
+{
+    "status_code": 400,
+    "valid": false,
+}
+```
