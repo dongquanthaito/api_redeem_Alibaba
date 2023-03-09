@@ -21,6 +21,13 @@ module.exports = {
         linkBO: 'http://gnl.jdtmb.com',
         site: 'shbet'
     },
+    new88: {
+        endpoint: 'https://api-att.khuyenmai.app/',
+        usernameBO: 'itcode',
+        passBO: '123456',
+        linkBO: 'https://cxy.jdtmb.com',
+        site: 'new88'
+    },
     att: {
         site: 'att'
     },
