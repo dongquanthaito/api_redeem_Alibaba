@@ -1,5 +1,11 @@
-
 ## API Reference
+### List
+ - [Ticket ID](https://github.com/dongquanthaito/api_redeem_Alibaba/edit/master/README.md#ticket-id)
+ - [Game Categories](https://github.com/dongquanthaito/api_redeem_Alibaba/edit/master/README.md#game-categories)
+ - [Add Point](https://github.com/dongquanthaito/api_redeem_Alibaba/edit/master/README.md#add-point)
+ - [Find Memo](https://github.com/dongquanthaito/api_redeem_Alibaba/edit/master/README.md#find-memo)
+ - [Check Vé Gộp](https://github.com/dongquanthaito/api_redeem_Alibaba/edit/master/README.md#check-v%C3%A9-g%E1%BB%99p)
+ - [Get Time Zone](https://github.com/dongquanthaito/api_redeem_Alibaba/edit/master/README.md#get-time-zone)
 
 ## Ticket ID
 ### Find Ticked ID
@@ -95,7 +101,7 @@
     "game_categories": ["Pg2Slot", "BngSlot", "Cq9Slot"]
 }
 ```
-### Find Memo
+## Find Memo
 ```http
   POST /find-memo
 ```
@@ -268,4 +274,5 @@ true
     "valid": false,
     "mess": "Bad Request"
 }
+```
 ```
