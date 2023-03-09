@@ -266,5 +266,6 @@ true
 {
     "status_code": 400,
     "valid": false,
+    "mess": "Bad Request"
 }
 ```

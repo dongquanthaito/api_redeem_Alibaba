@@ -16,7 +16,7 @@ module.exports = {
               
               axios(config)
               .then(function (response) {
-                if(response.data) {
+                if(!response.data) {
                     res.json({
                         status_code: 400,
                         valid: false,
