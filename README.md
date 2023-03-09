@@ -321,7 +321,7 @@ true
 
 ## Get Token BO
 ```http
-  GET /game-token-bo
+  GET /game-token-bo-v2
 ```
 
 | Parameter            | Type     | Description                    |
@@ -333,7 +333,17 @@ true
 {
     "status_code": 200,
     "valid": true,
-    "result": "<token>"
+    "result": {
+        "_id": "63f38966a6b345e597ebf1e2",
+        "exp": "1678361605",
+        "Id": "97",
+        "Account": "f80064",
+        "IsSub": true,
+        "IsVisible": true,
+        "Isvalidated": false,
+        "Token": "xxx.xxx",
+        "__v": 0
+    }
 }
 ```
 **Result - Error:**

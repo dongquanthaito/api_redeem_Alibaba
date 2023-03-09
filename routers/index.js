@@ -43,5 +43,5 @@ module.exports = (app) => {{
     app.use('/check-ve-gop', check_ve_gop)
     app.use('/get-timeZone', get_timeZone)
     app.use('/get-member-bo', get_member_BO)
-    app.use('/get-token-bo', get_token_BO)
+    app.use('/get-token-bo-v2', get_token_BO)
 }}
