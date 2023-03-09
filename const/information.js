@@ -14,6 +14,13 @@ module.exports = {
         linkBO: 'https://cne.jdtmb.com',
         site: 'hi88'
     },
+    shbet: {
+        endpoint: 'https://api-att.khuyenmai.app/',
+        usernameBO: 'vinit',
+        passBO: '123456',
+        linkBO: 'http://gnl.jdtmb.com',
+        site: 'shbet'
+    },
     att: {
         site: 'att'
     },

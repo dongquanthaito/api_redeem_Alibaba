@@ -6,6 +6,7 @@
  - [Find Memo](#find-memo)
  - [Check Vé Gộp](#check-ve-gop)
  - [Get Time Zone](#get-time-zone)
+ - [Get Member BO](#get-member-bo)
 
 
 <a name='ticket-id'></a>
@@ -62,9 +63,6 @@
 | :------------------- | :------- | :----------------------------- |
 | `game_categories_id` | `string` | **Required**. This is Promo ID |
 | `site`               | `string` |  **Required**                  |
-
-
-
 
 ### Create
 ```http
@@ -288,4 +286,31 @@ true
     "mess": "Bad Request"
 }
 ```
+<a name='get-member-bo'></a>
+
+## Get Member BO
+```http
+  GET /game-member-bo
 ```
+
+| Parameter            | Type     | Description                    |
+| :------------------- | :------- | :----------------------------- |
+| `site`               | `string` | **Required**                   |
+| `player_id`          | `string` |  **Required**                  |
+
+**Result - Success:**
+ ```javascript
+{
+    "status_code": 200,
+    "valid": true,
+    "account": "iris"
+}
+```
+**Result - Error:**
+ ```javascript
+{
+    "status_code": 404,
+    "valid": false,
+    "mess": 'Không tìm thấy thấy tài khoản hoặc tài khoản bị sai. Vui lòng thử lại.',
+    "account": "iris"
+}
