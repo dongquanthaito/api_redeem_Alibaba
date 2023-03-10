@@ -18,7 +18,7 @@ module.exports = {
         let {...query} = req.query
         try {
             if(req.site_info.site == 'alibaba' || req.site_info.site == 'xuxian') {
-                let find = await promoCodeModel.find(query)
+                let find = await promoCodeModel.find({system: req.site_info.site})
                 if(find.length == 0) {
                     res.json({
                         statusCode: 404,
