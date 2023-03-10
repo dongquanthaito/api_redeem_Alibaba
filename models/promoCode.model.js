@@ -11,7 +11,8 @@ const promoCode = mongoose.Schema({
     used_time: Number,
     round: Number,
     ip: String,
-    fp: String
+    fp: String,
+    system: String
 })
 
 module.exports = mongoose.model('promoCode', promoCode)
