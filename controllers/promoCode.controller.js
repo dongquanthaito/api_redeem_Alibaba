@@ -17,7 +17,7 @@ module.exports = {
     findPromoCode: async(req, res) => {
         let {...query} = req.query
         try {
-            if(req.site_info.site == 'att') {
+            if(req.site_info.site == 'alibaba' || req.site_info.site == 'xuxian') {
                 let find = await promoCodeModel.find(query)
                 if(find.length == 0) {
                     res.json({
