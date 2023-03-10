@@ -10,13 +10,13 @@ const connectDb = async() => {
 
         loginBOf8bet()
         loginBOhi88()
-        loginBOshbet()
+        // loginBOshbet()
         loginBOnew88()
 
         setInterval(() => {
             loginBOf8bet()
             loginBOhi88()
-            loginBOshbet()
+            // loginBOshbet()
             loginBOnew88()
         }, 1800000);
     } catch (error) {

@@ -60,7 +60,7 @@ module.exports = {
         try {
             let read = await accountModel.find(query)
             res.json({
-                statusCode: 200,
+                status_code: 200,
                 valid: true,
                 detail: read
             })
