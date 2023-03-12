@@ -66,6 +66,10 @@ module.exports = {
                 },
               });
             } else if (find[0].user_used != "non") {
+              let usedDate = ("0" + new Date(find[0].used_time).getDate()).slice("-2");
+              let usedMonth = ("0" + (new Date(find[0].used_time).getMonth() + 1)).slice("-2");
+              let usedYear = new Date(find[0].used_time).getFullYear();
+              let used_time = usedDate + " tháng " + usedMonth + ", " + usedYear;
               if (!find[0].used_time) {
                 res.json({
                   status_code: 403,
@@ -74,14 +78,10 @@ module.exports = {
                   detail: {
                     promo_code: find[0].promo_code,
                     point: find[0].point,
+                    time: used_time,
                   },
                 });
               } else {
-                let usedDate = ("0" + new Date(find[0].used_time).getDate()).slice("-2");
-                let usedMonth = ("0" + (new Date(find[0].used_time).getMonth() + 1)).slice("-2");
-                let usedYear = new Date(find[0].used_time).getFullYear();
-                let used_time = usedDate + " tháng " + usedMonth + ", " + usedYear;
-
                 res.json({
                   status_code: 403,
                   valid: false,
@@ -89,7 +89,7 @@ module.exports = {
                   detail: {
                     promo_code: find[0].promo_code,
                     point: find[0].point,
-                    used_time: used_time,
+                    time: used_time,
                   },
                 });
               }
