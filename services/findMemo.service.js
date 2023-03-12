@@ -43,7 +43,7 @@ module.exports = {
             console.log(boxMemo);
             // SH hoặc NEW cho mỗi tài khoản nhận được 3 lần
             if (site == "shbet" || site == "new88") {
-              if (boxMemo.length < 4) {
+              if (boxMemo.length <= 3) {
                 return true;
               } else {
                 return false;

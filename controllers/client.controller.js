@@ -138,7 +138,14 @@ module.exports = {
             if (findMemoResult == true) {
               //Chưa nhận KM trên BO
               //Kiểm tra trên Database đã nhận KM chưa
-              if (findUser.length != 0) {
+              //Đài New và SH được nhận 3 lần
+              let condition;
+              if (query.site == "shbet" || query.site == "new88") {
+                condition = 3;
+              } else {
+                condition = 0;
+              }
+              if (findUser.length > condition) {
                 //user đã nhận code trên database
                 res.json({
                   status_code: 403,
@@ -146,7 +153,7 @@ module.exports = {
                   title_mess: "Thao tác thất bại !",
                   text_mess: "Tài khoản " + '"' + query.player_id + '"' + " đã nhận khuyến mãi " + find[0].promo_id + " !",
                 });
-              } else if (findUser.length == 0) {
+              } else {
                 //user chưa nhận code
                 let deposit = await getDepositBOService(query.site);
                 if (deposit == 502) {
