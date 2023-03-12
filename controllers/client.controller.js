@@ -185,6 +185,7 @@ module.exports = {
                         fp: fpResult,
                       });
                       if (add) {
+                        console.log("Add Point Successfully");
                         res.json({
                           status_code: 200,
                           valid: true,

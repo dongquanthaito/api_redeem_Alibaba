@@ -43,15 +43,9 @@ module.exports = {
             console.log(boxMemo);
             // SH hoặc NEW cho mỗi tài khoản nhận được 3 lần
             if (site == "shbet" || site == "new88") {
-              let count = A.reduce((acc, curr) => {
-                return curr === memo ? acc + 1 : acc;
-              }, 0);
-              console.log("count " + count);
-              if (count <= 3) {
-                console.log("count true " + count);
+              if (boxMemo.length <= 3) {
                 return true;
               } else {
-                console.log("false");
                 return false;
               }
             } else {
