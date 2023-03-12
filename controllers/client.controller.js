@@ -66,8 +66,8 @@ module.exports = {
                 },
               });
             } else if (find[0].user_used != "non") {
-              let usedDate = ("0" + new Date(find[0].used_time).getDate()).slice("-2");
-              let usedMonth = ("0" + (new Date(find[0].used_time).getMonth() + 1)).slice("-2");
+              let usedDate = new Date(find[0].used_time).getDate().toString().padStart(2, "0");
+              let usedMonth = (new Date(find[0].used_time).getMonth() + 1).toString().padStart(2, "0");
               let usedYear = new Date(find[0].used_time).getFullYear();
               let used_time = usedDate + " tháng " + usedMonth + ", " + usedYear;
               console.log(find[0].used_time);
