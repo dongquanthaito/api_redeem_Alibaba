@@ -40,6 +40,7 @@ module.exports = {
                 boxMemo.push(el.Memo);
               }
             });
+            console.log(boxMemo);
             // SH hoặc NEW cho mỗi tài khoản nhận được 3 lần
             if (site == "shbet" || site == "new88") {
               let count = A.reduce((acc, curr) => {
