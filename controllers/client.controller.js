@@ -31,76 +31,67 @@ module.exports = {
           });
         } else {
           //Có code
-          let timeGlobal = await getTimeZoneClient();
 
-          if (timeGlobal == false) {
+          let timeStamp = new Date().getTime();
+          let expTime = find[0].exp_code;
+
+          let date = ("0" + new Date(expTime).getDate()).slice("-2");
+          let month = ("0" + (new Date(expTime).getMonth() + 1)).slice("-2");
+          let year = new Date(expTime).getFullYear();
+          let time = date + " tháng " + month + ", " + year;
+          console.log(expTime + "-" + timeStamp);
+          if (expTime < timeStamp) {
+            //Kiểm tra hạn sử dụng CODE - Code hết hạn
             res.json({
-              status_code: 502,
+              status_code: 403,
               valid: false,
-              title_mess: "Lỗi hệ thống",
-              text_mess: "Mất kết nối đến máy chủ. Xin vui lòng thử lại.",
+              title_mess: "Mã khuyến mãi đã hết hạn sử dụng!",
+              detail: {
+                promo_code: find[0].promo_code,
+                point: find[0].point,
+                time: time,
+              },
             });
           } else {
-            let timeStamp = new Date(timeGlobal.dateTime).getTime();
-            let expTime = find[0].exp_code;
-
-            let date = ("0" + new Date(expTime).getDate()).slice("-2");
-            let month = ("0" + (new Date(expTime).getMonth() + 1)).slice("-2");
-            let year = new Date(expTime).getFullYear();
-            let time = date + " tháng " + month + ", " + year;
-            if (expTime < timeStamp) {
-              //Kiểm tra hạn sử dụng CODE - Code hết hạn
+            //Code còn hạn sử dụng
+            if (find[0].user_used == "non") {
               res.json({
-                status_code: 403,
-                valid: false,
-                title_mess: "Mã khuyến mãi đã hết hạn sử dụng!",
+                status_code: 200,
+                valid: true,
+                title_mess: "Mã khuyến mãi chưa sử dụng!",
                 detail: {
                   promo_code: find[0].promo_code,
                   point: find[0].point,
                   time: time,
                 },
               });
-            } else {
-              //Code còn hạn sử dụng
-              if (find[0].user_used == "non") {
+            } else if (find[0].user_used != "non") {
+              if (!find[0].used_time) {
                 res.json({
-                  status_code: 200,
-                  valid: true,
-                  title_mess: "Mã khuyến mãi chưa sử dụng!",
+                  status_code: 403,
+                  valid: false,
+                  title_mess: "Mã khuyến mãi đã được sử dụng!",
                   detail: {
                     promo_code: find[0].promo_code,
                     point: find[0].point,
-                    time: time,
                   },
                 });
-              } else if (find[0].user_used != "non") {
-                if (!find[0].used_time) {
-                  res.json({
-                    status_code: 403,
-                    valid: false,
-                    title_mess: "Mã khuyến mãi đã được sử dụng!",
-                    detail: {
-                      promo_code: find[0].promo_code,
-                      point: find[0].point,
-                    },
-                  });
-                } else {
-                  let usedDate = ("0" + new Date(find[0].used_time).getDate()).slice("-2");
-                  let usedMonth = ("0" + (new Date(find[0].used_time).getMonth() + 1)).slice("-2");
-                  let usedYear = new Date(find[0].used_time).getFullYear();
-                  let used_time = usedDate + " tháng " + usedMonth + ", " + usedYear;
+              } else {
+                let usedDate = ("0" + new Date(find[0].used_time).getDate()).slice("-2");
+                let usedMonth = ("0" + (new Date(find[0].used_time).getMonth() + 1)).slice("-2");
+                let usedYear = new Date(find[0].used_time).getFullYear();
+                let used_time = usedDate + " tháng " + usedMonth + ", " + usedYear;
 
-                  res.json({
-                    status_code: 403,
-                    valid: false,
-                    title_mess: "Mã khuyến mãi đã được sử dụng!",
-                    detail: {
-                      promo_code: find[0].promo_code,
-                      point: find[0].point,
-                      used_time: used_time,
-                    },
-                  });
-                }
+                res.json({
+                  status_code: 403,
+                  valid: false,
+                  title_mess: "Mã khuyến mãi đã được sử dụng!",
+                  detail: {
+                    promo_code: find[0].promo_code,
+                    point: find[0].point,
+                    used_time: used_time,
+                  },
+                });
               }
             }
           }
@@ -187,8 +178,7 @@ module.exports = {
                       text_mess: "Mất kết nối đến máy chủ. Xin vui lòng thử lại.",
                     });
                   } else {
-                    let timeGlobal = await getTimeZoneClient();
-                    let timeStamp = new Date(timeGlobal.dateTime).getTime();
+                    let timeStamp = new Date().getTime();
 
                     let ipResult = req.ip;
                     let fpResult = req.fingerprint.hash;
