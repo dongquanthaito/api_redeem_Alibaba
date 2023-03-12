@@ -70,29 +70,17 @@ module.exports = {
               let usedMonth = ("0" + (new Date(find[0].used_time).getMonth() + 1)).slice("-2");
               let usedYear = new Date(find[0].used_time).getFullYear();
               let used_time = usedDate + " tháng " + usedMonth + ", " + usedYear;
-              if (!find[0].used_time) {
-                res.json({
-                  status_code: 403,
-                  valid: false,
-                  title_mess: "Mã khuyến mãi đã được sử dụng!",
-                  detail: {
-                    promo_code: find[0].promo_code,
-                    point: find[0].point,
-                    time: used_time,
-                  },
-                });
-              } else {
-                res.json({
-                  status_code: 403,
-                  valid: false,
-                  title_mess: "Mã khuyến mãi đã được sử dụng!",
-                  detail: {
-                    promo_code: find[0].promo_code,
-                    point: find[0].point,
-                    time: used_time,
-                  },
-                });
-              }
+              console.log(find[0].used_time);
+              res.json({
+                status_code: 403,
+                valid: false,
+                title_mess: "Mã khuyến mãi đã được sử dụng!",
+                detail: {
+                  promo_code: find[0].promo_code,
+                  point: find[0].point,
+                  time: used_time,
+                },
+              });
             }
           }
         }
